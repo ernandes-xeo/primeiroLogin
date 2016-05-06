@@ -1,9 +1,9 @@
 <?php
-// início de sessão php
-session_start();
-
 // incluindo conexao php
 include_once 'conexao.php';
+
+// início de sessão php
+session_start();
 
 // verificação se o login nao está vazio
 if (!empty($_POST['user'])) {
@@ -14,7 +14,6 @@ if (!empty($_POST['user'])) {
 if (!empty($_POST['senha']))
     $senha = md5($_POST['senha']);
 
-// valida botao
 if($_REQUEST['botao'])
     @$botao = $_REQUEST['botao'];
 
@@ -35,10 +34,6 @@ switch ($botao) {
             $_SESSION['usuario'] = $nome;
             $url = 'location:view/index.php';
             header($url);
-        }else{
-            unset($_SESSION['usuario']);
-            unset($_SESSION['senha']);
-            header("location:index.php");
         }
         break;
 
@@ -47,4 +42,10 @@ switch ($botao) {
         unset($_SESSION['senha']);
         header("location:index.php");
         break;
+    
+    default:
+        header("location:index.php");
+        unset($_SESSION['usuario']);
+        unset($_SESSION['senha']);
+        header("location:index.php");
 }
