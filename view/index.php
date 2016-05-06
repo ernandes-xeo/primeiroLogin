@@ -27,6 +27,21 @@
             include_once "header.php";
             include_once "nav.php";
             include_once "content.php";
+            $opcao = $_REQUEST['op'];
+            switch ($opcao){
+            case 1:
+                
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+            case 4:
+            break;        
+            default:
+                include_once "content.php";
+            }
+            
             include_once "footer.php";	
     ?>
 </body>
