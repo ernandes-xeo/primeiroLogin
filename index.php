@@ -16,7 +16,7 @@
                 <label> Senha:</label>
                 <input type="password" id='senha' name="senha"></input>
 
-                <input class="botao" type="submit" name="botao" value="Enviar" />
+                <input class="botao" type="submit" name="botao" value="Entrar" />
                 <input class='botao reset' type="reset" value="Limpar" onclick="document.getElementById('meuform').submit();" />
 
             </fieldset>
