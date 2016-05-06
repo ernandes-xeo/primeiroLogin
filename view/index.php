@@ -28,7 +28,7 @@
             include_once "nav.php";
             
             
-            $opcao = $_REQUEST['op'];
+            @$opcao = $_REQUEST['op'];
             
             switch ($opcao){
             case 1:
