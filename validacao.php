@@ -7,7 +7,7 @@ session_start();
 
 // verificação se o login nao está vazio
 if (!empty($_POST['user'])) {
-    $nome = $_POST['user'];
+    @$nome = $_POST['user'];
 }
 
 // verifica se a senha nao está vazia
@@ -34,6 +34,8 @@ switch ($botao) {
             $_SESSION['usuario'] = $nome;
             $url = 'location:view/index.php';
             header($url);
+        }else{
+           header("location:index.php");
         }
         break;
 

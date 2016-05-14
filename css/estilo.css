@@ -7,12 +7,12 @@
 
 h1, h2{
     margin: 20px auto;
-    width: 500px;
+    width: 40%;
     display: block;
 }
 
 form, .boxe{
-    width: 500px;
+    width: 40%;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -21,29 +21,28 @@ form, .boxe{
 }
 form > fieldset{
     margin: 5px;
-    padding: 10px;
+    padding: 0.5em;
     border-color: #dedede;
 
 }
 form > fieldset > legend{
-
     border: 1px solid #dedede;
     font-size: 14px;
-    padding: 0 10px 0;
+    padding: 0 0.5em 0;
 
 }
 form > fieldset > label{
     display: block;
     width: 100%;
-    margin: 0px 10px;
+    margin: 0 0.5em;
 }
 
 form > fieldset > input{
     display: block;
     width: 90%;
-    height: 20px;
-    margin: 0px 10px 10px;
-    padding: 10px;
+    height: 1.5em;
+    margin: 0 0.5em 1em;
+    padding: 0.5em;
 
 }
 
@@ -75,7 +74,7 @@ form > fieldset > input{
 
 
 .resp{
-    width: 500px;
+    width: 500%;
     display: block;
     margin: 20px auto;
     background: #40d47e;
@@ -85,4 +84,28 @@ form > fieldset > input{
 
 .resp p{
     padding: 10px 20px;
+}
+/* para dispositivos com no máximo 752 pixels */
+@media screen and (max-width: 752px){
+    form, .boxe{
+        width: 60%;
+    }
+    
+}
+/* para dispositivos com no máximo 656px */
+@media screen and (max-width: 656px) {
+    form, .boxe{
+        width: 70%;
+    }
+    
+    form > fieldset > input{
+        margin: 0 0 0.5em;
+    }
+}
+
+/* para dispositivos com largura máxima 360px */
+@media screen and (min-width: 360px) {
+    .botao{
+        width: 90%;
+    }
 }
