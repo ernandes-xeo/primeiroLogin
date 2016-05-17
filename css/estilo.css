@@ -7,12 +7,12 @@
 
 h1, h2{
     margin: 20px auto;
-    width: 40%;
+    width: 33.333%;
     display: block;
 }
 
 form, .boxe{
-    width: 40%;
+    width: 33.333%;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -74,7 +74,7 @@ form > fieldset > input{
 
 
 .resp{
-    width: 500%;
+    width: 50%;
     display: block;
     margin: 20px auto;
     background: #40d47e;
@@ -100,12 +100,5 @@ form > fieldset > input{
     
     form > fieldset > input{
         margin: 0 0 0.5em;
-    }
-}
-
-/* para dispositivos com largura máxima 360px */
-@media screen and (min-width: 360px) {
-    .botao{
-        width: 90%;
     }
 }
