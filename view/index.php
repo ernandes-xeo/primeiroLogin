@@ -35,10 +35,10 @@
                 include_once 'servicos.php';
                 break;
             case 2:
-                include_once 'clientes.php';
+                include_once './clientes/clientes.php';
                 break;
             case 3:
-                include_once 'produtos.php';
+                include_once './produtos/produtos.php';
                 break;
             case 4:
                 include_once 'ajuda.php';
