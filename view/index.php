@@ -5,6 +5,7 @@
         <title>Layout</title>
         <meta name="author" content="Prof.: Xeo" >
         <meta name="Description" content="Layout padrão página html" >
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css" >
         <link rel="stylesheet" type="text/css" href="../css/layout.css">
     </head>
     <body>
@@ -20,6 +21,7 @@
         }
 
         $logado = $_SESSION['usuario'];
+        $iduser = $_SESSION['id'];
         ?>
 
         <?php
@@ -42,6 +44,9 @@
                 break;
             case 4:
                 include_once 'ajuda.php';
+                break;
+            case 5:
+                include_once 'editar.php';
                 break;
             default:
                 include_once "content.php";
