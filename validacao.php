@@ -93,9 +93,13 @@ switch ($botao) {
         break;
     case "Salvar":
         $iduser = $_REQUEST['id'];
-		$nome = $_REQUEST['nome'];
-		$stmt = $mysqli->prepare("update usuario set nome =? where id = ?");
-        $stmt->bind_param('sd', $nome, $iduser);
+	$nome = $_POST['nome'];
+        $user = $_POST['user'];
+        $email = $_POST['email'];
+        $senha = md5($_POST['senha']);
+        
+	$stmt = $mysqli->prepare("UPDATE usuario SET usuario=?, nome=?, mail=?,senha=? where id = ?");
+        $stmt->bind_param('ssssd', $user, $nome, $email, $senha, $iduser);
         
 		if($stmt->execute()){
 			$url = 'location:view/index.php';
