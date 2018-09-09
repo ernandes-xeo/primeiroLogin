@@ -1,18 +1,22 @@
 <?php
-/*
- * Conexao mysqli banco
+/**
+ * PHP COM PDO
+ * TrabalhandoSessao2/conexao.php
+ * Prof.: Xeo
  */
-
 $host = 'localhost';
-$database = 'banco_aula';
+$banco = 'banco_aula';
 $user = 'root';
-$password = '';
-/*
- * host, user, password, banco_de_dados
- */    
-$mysqli = new mysqli($host,$user,$password, $database);
-// Caso algo tenha dado errado, exibe uma mensagem de erro
-if (mysqli_connect_errno())
-    trigger_error(mysqli_connect_error());
+$senha = '';
+    
+try{
+    
+    $conexao = new PDO("mysql:host=".$host.";dbname=".$banco."", "".$user."", "".$senha."");     
+   // echo "ok";
+} catch (PDOException $e) {
+    print_r($e);
+    echo "Erro " . $e->getMessage(); 
+}
 
+?>
 

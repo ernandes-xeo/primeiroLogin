@@ -23,13 +23,22 @@ switch ($botao) {
     case 'Entrar':
         // consulta banco de dados
         // query select com table usuario
-        $sql = "select * from usuario where usuario = '$nome' and senha = '$senha'";
-        $result = $mysqli->query($sql);
-        while ($row = $result->fetch_object()) {
+        // opcao 1
+        // $sql = "select * from usuario where usuario = '$nome' and senha = '$senha'";
+
+        $sql = "select * from usuario where usuario = :nome and senha = :senha";
+        $result = $conexao->prepare($sql);
+
+        // prepare value 
+        $result->bindValue(":nome", $nome);
+        $result->bindValue(":senha", $senha);
+
+        $result->execute();
+        
+        while ($row = $result->fetch(PDO::FETCH_OBJ)) {
             $bdnome = $row->usuario;
             $bdsenha = $row->senha;
         }
-        $mysqli->close();
 
         if ($nome === $bdnome && $senha === $bdsenha) {
             $_SESSION['usuario'] = $nome;
